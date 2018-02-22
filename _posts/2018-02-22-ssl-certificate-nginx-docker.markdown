@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Setting up an SSL certificate for Nginx in a Docker container"
-date:   2018-02-21 19:09:43 +0300
+date:   2018-02-22 17:03:00 +0300
 categories: devops
 ---
 
