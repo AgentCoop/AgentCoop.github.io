@@ -69,7 +69,7 @@ nginx -c /etc/nginx/nginx.conf
 tail -q -s 10 -f /var/log/nginx/access.log /var/log/nginx/error.log
 {% endhighlight %}
 
-The trick is we don't run the Nginx process in foreground. Since we have to re-new our certificate in some time, the Nginx process will be stopped by the cerbot utility, running by cron scheduler every day, once our certificate is about for renewal.
+The trick is we don't run the Nginx process in foreground. Since we have to re-new our certificate in some time, the Nginx process will be stopped by the cerbot utility - running by the cron scheduler once a day - as soon as our certificate is about for renewal.
 
 And if you stop a container's foreground process the container will be terminated by itself. To avoid that, we are using tail command as a workaround for our foreground process.
 
