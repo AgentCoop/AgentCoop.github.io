@@ -1,0 +1,108 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<style>
+@keyframes spincube {
+    from,to  { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    16%      { transform: rotateY(-90deg);                           }
+    33%      { transform: rotateY(-90deg) rotateZ(90deg);            }
+    50%      { transform: rotateY(-180deg) rotateZ(90deg);           }
+    66%      { transform: rotateY(90deg) rotateX(90deg);             }
+    83%      { transform: rotateX(90deg);                            }
+}
+  
+.cube {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 340px;
+  margin: 25% auto;
+  width: 340px;
+  -webkit-transform-style: preserve-3d;
+  /*
+  animation-name: spincube;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 12s;
+  transform-style: preserve-3d;
+  transform-origin: 170px 170px 0;
+  */ 
+}
+
+.face {
+  -webkit-box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+  height: 340px;
+  position: absolute;
+  width: 340px;
+}
+
+.cube .one  {
+  -webkit-transform: rotateX(90deg) translateZ(170px);
+  background: url(https://pp.userapi.com/c633318/v633318873/5c1b/mz2PvYPLiHE.jpg) no-repeat; background-size: cover;
+}
+
+.cube .two {
+  background: url(https://pp.userapi.com/c622422/v622422873/2d8d9/3J0UcWF-nx0.jpg) no-repeat; background-size: cover;
+  -webkit-transform: translateZ(170px);
+}
+
+.cube .three {
+ background: url(https://pp.userapi.com/c11405/u7950873/-6/y_51de232b.jpg) no-repeat; background-size: cover;
+  -webkit-transform: rotateY(90deg) translateZ(170px);
+}
+
+.cube .four {
+ background: url(https://pp.userapi.com/c10082/u7950873/-6/w_ca58fc40.jpg) no-repeat; background-size: cover;
+  -webkit-transform: rotateY(180deg) translateZ(170px);
+}
+
+.cube .five {
+background: url(https://pp.userapi.com/c605823/v605823873/d45/tfVIoATkH_o.jpg) no-repeat; background-size: cover;
+  -webkit-transform: rotateY(-90deg) translateZ(170px);
+}
+
+.cube .six {
+  background: url(https://pp.userapi.com/c317426/v317426615/246e/SsAqECoAAP0.jpg) no-repeat; background-size: cover;
+  -webkit-transform: rotateX(-90deg) translateZ(170px) rotate(180deg);
+}
+</style>
+<script>
+function rotate(xAngle, yAngle) {
+	$('.cube')[0].style.webkitTransform = "rotateX("+xAngle+"deg) rotateY("+yAngle+"deg)";
+}
+
+function onMouseMove(x,y) {
+    var width = $(window).width();
+    var mouseX = x - (width * 0.5);
+    var height = $(window).height();
+    var mouseY = y - (height * 0.5);
+    var xAngle = (mouseY / height) * 90;
+    var yAngle = (mouseX / width) * 90;
+    
+    rotate(xAngle, yAngle);
+}
+
+$(document).ready(function() {
+	rotate(45, 45);
+})
+
+$(window).on('mousemove', function(event) {
+	onMouseMove(event.pageX,event.pageY)
+});
+
+$(window).on('vmousemove', function(event) {
+	onMouseMove(event.pageX,event.pageY)
+});
+</script>
+</head>
+<body>
+<div class="cube">
+    <div class="face one"></div>
+    <div class="face two"></div>
+    <div class="face three"></div>
+    <div class="face four"></div>
+    <div class="face five"></div>
+    <div class="face six"></div>
+</div>
+</body>
+</html>
