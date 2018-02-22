@@ -2,7 +2,7 @@
 layout: post
 title:  "Setting up an SSL certificate for Nginx in a Docker container"
 date:   2018-02-21 19:09:43 +0300
-categories: jekyll update
+categories: devops
 ---
 
 Having an SSL certificate is a crucial requirement for Web sites not only because it adds up to their
