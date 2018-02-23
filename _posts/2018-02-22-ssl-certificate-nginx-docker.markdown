@@ -5,12 +5,12 @@ date:   2018-02-22 17:03:00 +0300
 categories: devops
 ---
 
-Having an SSL certificate is a crucial requirement for Web sites not only because it adds up to their
-security but, mostly, because it makes them more trustful by their visitors.
+Having an SSL certificate is a crucial requirement for Web sites not only because it adds to their
+security but, mostly, because it makes them more trustful by their visitors, when they see a green lock in the browser address meaning their connection is secure.
 
 According to this [article](https://www.wired.com/2017/01/half-web-now-encrypted-makes-everyone-safer/), half Web sites still don't put SSL encryption in use. The reasons for that may be various: a lazy site administrator, SSL certificates cost money, and so on.
 
-This article is about how to set up an SSL certificate in an easy way and free of charge. And because more and more people begin to use Docker in production, we are going to slightly complicate this task by doing it for Nginx running in a Docker container.
+This essay is about how to set up an SSL certificate in an easy way and free of charge. And because more and more people begin to use Docker in production, we are going to slightly complicate this task by doing it for Nginx running in a Docker container.
 
 Let's start with Dockerfile for our Nginx image:
 {% highlight bash %}
@@ -71,7 +71,7 @@ tail -q -s 10 -f /var/log/nginx/access.log /var/log/nginx/error.log
 
 The trick is we don't run the Nginx process in foreground. Since we have to re-new our certificate in some time, the Nginx process will be stopped by the cerbot utility - running by the cron scheduler once a day - as soon as our certificate is about for renewal.
 
-And if you stop a container's foreground process the container will be terminated by itself. To avoid that, we are using tail command as a workaround for our foreground process.
+And if you stop a container's foreground process the container will terminate its execution. To avoid that, we are using tail command as a workaround for our foreground process.
 
 Example of Nginx configuration for our Web site:
 
