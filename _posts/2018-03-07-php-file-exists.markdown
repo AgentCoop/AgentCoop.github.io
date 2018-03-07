@@ -51,4 +51,4 @@ It does the same thing, only we got rid of three if statements. Nice, programmer
 
 Don't forget that your code is not only for you. Your code, no doubt, has to be elegant, but it has to be readable as well even for novices, which may maintain your code after you.
 
-Finding a golden ration between readability and terseness is what makes one a good programmer.
+Finding a golden ratio between readability and terseness is what makes one a good programmer.
