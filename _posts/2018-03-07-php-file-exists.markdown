@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "PHP World. Say yes and no to 'terse and elegant code'"
+title:  "Say yes and no to 'terse and elegant code'"
 date:   2018-03-07 15:45:00 +0300
 categories: programming php
 ---
