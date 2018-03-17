@@ -53,7 +53,7 @@ And why throw an exception instead of returning null? The main reason for that i
 
 Instead of having lots of ifs scattered around your code, checking what your method returned, you can just throw an exception and handle it in the corresponding catch block, if one of those critical objects was not retrieved.
 
-In other words, when you see a getSomethig method, you should expect an object returned from that method or an exception should be thrown otherwise. To the contrary, findSomething might return null, so that you have to check returned values every time.
+In other words, when you see a getSomething method, you should expect an object returned from that method or an exception should be thrown otherwise. To the contrary, findSomething might return null, so that you have to check returned values every time.
 
 To not to write the same code twice, you can implement both methods as follows:
 
